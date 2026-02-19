@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f5f5f5;
+
+  /* Silver palette */
+  --silver-50: #fafafa;
+  --silver-100: #f5f5f5;
+  --silver-200: #e5e5e5;
+  --silver-300: #d4d4d4;
+  --silver-400: #a3a3a3;
+  --silver-500: #a1a1aa;
+  --silver-600: #737373;
+  --silver-700: #525252;
+  --silver-800: #404040;
+  --silver-900: #262626;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom silver colors */
+  --color-silver-50: var(--silver-50);
+  --color-silver-100: var(--silver-100);
+  --color-silver-200: var(--silver-200);
+  --color-silver-300: var(--silver-300);
+  --color-silver-400: var(--silver-400);
+  --color-silver-500: var(--silver-500);
+  --color-silver-600: var(--silver-600);
+  --color-silver-700: var(--silver-700);
+  --color-silver-800: var(--silver-800);
+  --color-silver-900: var(--silver-900);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient animation for heading */
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 6s ease infinite;
+}
+
+/* Force dark theme for select dropdown */
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
+  color: #f5f5f5 !important;
+  padding: 8px 12px !important;
+}
+
+/* Override browser default highlighting */
+select option:checked,
+select option:hover,
+select option:focus {
+  background-color: #2a2a2a !important;
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* Additional Webkit/Blink specific rules */
+select option:checked {
+  background: linear-gradient(0deg, #2a2a2a 0%, #2a2a2a 100%) !important;
+}

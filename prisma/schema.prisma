@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model WaitlistEntry {
+  id         String   @id @default(cuid())
+  email      String   @unique
+  role       String   // 'student', 'developer', 'founder', 'designer', 'other'
+  customRole String?  // Nullable - only filled when role is 'other'
+  createdAt  DateTime @default(now())
+  ipHash     String   // Hashed IP for rate limiting (never store raw IP)
+
+  @@index([ipHash, createdAt])
+  @@index([createdAt])
+}
