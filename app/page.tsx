@@ -12,11 +12,11 @@ export default function Home() {
         <div className="space-y-3 sm:space-y-4">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter">
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-silver-200 to-silver-500 animate-gradient">
-              Syncreate
+              SphereNet
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-silver-400 font-light tracking-wide">
-            Creating Valuable Solutions
+            An AI-powered collaboration infrastructure where ideas meet the right collaborators
           </p>
         </div>
 
